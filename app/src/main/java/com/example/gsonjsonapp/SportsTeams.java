@@ -2,7 +2,7 @@ package com.example.gsonjsonapp;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SportsTeam {
+public class SportsTeams {
     @SerializedName("name")
     public String sportsTeamName;
 
@@ -12,13 +12,7 @@ public class SportsTeam {
     @SerializedName("info")
     public String sportsTeamInfo;
 
-    public String getSportsTeamName() {return sportsTeamName;}
-
-    public int getSportsTeamYearFounded() {return sportsTeamYearFounded;}
-
-    public String getSportsTeamInfo() {return sportsTeamInfo;}
-
-    public SportsTeam(String name, int year, String info)
+    public SportsTeams(String name, int year, String info)
     {
         sportsTeamName = name;
         sportsTeamYearFounded = year;

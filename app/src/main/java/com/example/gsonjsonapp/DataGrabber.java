@@ -1,7 +1,6 @@
 package com.example.gsonjsonapp;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,9 +24,9 @@ public class DataGrabber {
 
     private RequestQueue mQueue;
 
-    public static Map<String, SportsTeam> ITEM_MAP = null;
+    public static Map<String, SportsTeams> ITEM_MAP = null;
 
-    public static List<SportsTeam> TEAMS = null;
+    public static List<SportsTeams> TEAMS = null;
 
     public void getThatDataFromThatURL (Context context){
         if (TEAMS != null){
@@ -55,10 +54,10 @@ public class DataGrabber {
                             JSONArray jsonArray = response.getJSONArray("sportsTeams");
 
                             if (jsonArray.length() > 0) {
-                                List<SportsTeam> teams = Arrays.asList(gson.fromJson(jsonArray.toString(), SportsTeam[].class));
+                                List<SportsTeams> teams = Arrays.asList(gson.fromJson(jsonArray.toString(), SportsTeams[].class));
 
-                                for (SportsTeam sportsTeam: teams) {
-                                    addObjectToList(teams)
+                                for (SportsTeams sportsTeams: teams) {
+                                    addObjectToList(sportsTeams);
                                 }
                             }
                         } catch (JSONException e) {
@@ -72,5 +71,10 @@ public class DataGrabber {
                 }
             });
         mQueue.add(request);
+    }
+
+    private void addObjectToList(SportsTeams theTeam) {
+        TEAMS.add(theTeam);
+        ITEM_MAP.put(theTeam.sportsTeamName, theTeam);
     }
 }
