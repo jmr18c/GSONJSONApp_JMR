@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Justin\'s Favorite Sports Teams</string>
     <string name="title_item_detail">Team Information</string>
-    <string name="sports_teams_url">https://api.jsonbin.io/b/5f7c013f302a837e957560c6</string>
+    <string name="sports_teams_url">https://api.jsonbin.io/b/5f7c013f302a837e957560c6/1</string>
 </resources>

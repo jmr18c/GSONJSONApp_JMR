@@ -56,8 +56,8 @@ public class DataGrabber {
                             if (jsonArray.length() > 0) {
                                 List<SportsTeams> teams = Arrays.asList(gson.fromJson(jsonArray.toString(), SportsTeams[].class));
 
-                                for (SportsTeams sportsTeams: teams) {
-                                    addObjectToList(sportsTeams);
+                                for (SportsTeams sportsTeam: teams) {
+                                    addObjectToList(sportsTeam);
                                 }
                             }
                         } catch (JSONException e) {
